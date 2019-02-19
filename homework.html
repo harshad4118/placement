@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to list all the items in the array.</p>
+<button onclick="arr.map(sort_m)">Try it</button>
+<p id="btn"></p>
+
+<script>
+demoP = document.getElementById("btn");
+var arr=[4,6,2,7,8,15,9,3,1];
+
+function swap(arr,a, b){  
+    var temp;  
+    temp = arr[a];  
+    arr[a] = arr[b];  
+    arr[b] = temp;  
+ } 
+
+function sort_u(arr)
+{
+    for (var i=0;i<arr.length-1;i++)
+    {
+        for (var j=0;j<arr.length-i-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                swap(arr,j,j+1);
+            }
+        }
+    }
+    demoP.innerHTML = arr; 
+}
+function sort_m(item,index,array)
+{
+    array.forEach(function(item1,index1)
+    {
+        if(array[index] < array[index1]) 
+        {
+            swap(array,index,index1)
+        }
+    })
+console.log(arr);    
+};
+
+</script>
+
+</body>
+</html>
+
+
